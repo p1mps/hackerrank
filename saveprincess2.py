@@ -35,12 +35,12 @@ def next_move(posr, posc, board):
       move = random.choice(moves)
       if move == "RIGHT" and (posc + 1 < len(board)):
         ok = True
-        if move == "LEFT" and (posc - 1 < len(board)):
-          ok = True
-          if move == "UP" and (posr - 1 < len(board)):
-            ok = True
-            if move == "DOWN" and (posr + 1 < len(board)):
-              ok = True
+      if move == "LEFT" and (posc - 1 < len(board)):
+        ok = True
+      if move == "UP" and (posr - 1 < len(board)):
+        ok = True
+      if move == "DOWN" and (posr + 1 < len(board)):
+        ok = True
               
     return move
 
