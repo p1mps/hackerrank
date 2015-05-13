@@ -18,8 +18,8 @@ def next_move(posr, posc, board):
       return "CLEAN"
     
     cells = dirty_cells(board)
-    moves = ["RIGHT", "LEFT", "UP", "DOWN"]
     
+      
     if [posr, posc + 1] in cells:
       return "RIGHT"
     if [posr, posc - 1] in cells:
@@ -30,16 +30,19 @@ def next_move(posr, posc, board):
       return "UP"
     
     
+    moves = ["RIGHT", "LEFT", "UP", "DOWN"]
+    
+    
     ok = False
     while ok == False:
       move = random.choice(moves)
-      if move == "RIGHT" and (posc + 1 < len(board)):
+      if move == "RIGHT" and ((posc + 1) < len(board)):
         ok = True
-      if move == "LEFT" and (posc - 1 < len(board)):
+      if move == "LEFT" and ((posc - 1) >= 0):
         ok = True
-      if move == "UP" and (posr - 1 < len(board)):
+      if move == "UP" and ((posr - 1) >= 0):
         ok = True
-      if move == "DOWN" and (posr + 1 < len(board)):
+      if move == "DOWN" and ((posr + 1) < len(board)):
         ok = True
               
     return move
